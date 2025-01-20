@@ -9,7 +9,7 @@ const SignupForm = () => {
     // left side
     <div className="signup-form">
         <div className="form-container">
-            <h1 className='form-headline'>Create an Account</h1>
+            <h1 className='form-headline'>Create Account</h1>
             <p>Track, analyze, and optimize your trades—elevate your trading journey today!</p>
 
             <form className='signup'>
