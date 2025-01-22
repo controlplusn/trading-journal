@@ -9,8 +9,7 @@ const userSchema = new mongoose.Schema({
         required: true
     },
 
-    verificationToken: String
-})
+}, {timestamp: true});
 
 // User model
 export const User = mongoose.model('User', userSchema);
