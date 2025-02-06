@@ -3,13 +3,15 @@ import Login from './pages/Login/Login';
 import Signup from './pages/Signup/Signup';
 import Sidebar from './pages/Sidebar/Sidebar';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import TradeEntryButton from './pages/Trade Entry Form/TradeEntryButton';
+import TradeFormParent from './pages/Trade Entry Form/TradeFormParent';
 
 function App() {
 
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <Sidebar />
+      element: <TradeFormParent />
     },
     {
       path: '/signup',
