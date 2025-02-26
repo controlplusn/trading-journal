@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import { connectDB } from './db/connectDB.js';
 import cookieParser from 'cookie-parser';
 import authRoutes from './routes/auth.route.js';
+import tradeRoutes from './routes/trade.route.js';
 
 dotenv.config();
 
@@ -13,6 +14,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use("/api/auth", authRoutes);
+app.use("/api/trade", tradeRoutes);
 
 app.listen(PORT, () => {
     connectDB();
