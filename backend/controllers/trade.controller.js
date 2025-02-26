@@ -1,4 +1,4 @@
-import { TradeEntry } from "../models/trade.model";
+import { TradeEntry } from "../models/trade.model.js";
 
 export const createTrade = async (req, res) => {
     try {
@@ -35,6 +35,6 @@ export const fetchTrade = async (req, res) => {
         const trades = await TradeEntry.find(); // fetching all the trade records from the database
         res.json(trades);
     } catch (error) {
-        
+        res.status(400).json({success: false, message: error.message})
     }
 }

@@ -10,7 +10,10 @@ const tradeSchema = new mongoose.Schema({
     tpPrice: Number,
     exitPrice: Number,
     tradeSize: Number,
-    dateTime: Date,
+    dateTime: {
+        type: Date,
+        default: Date.now
+    },
     tradeOutcome: String
 });
 
