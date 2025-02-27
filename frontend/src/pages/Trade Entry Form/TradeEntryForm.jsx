@@ -40,140 +40,149 @@ const TradeEntryForm = ({ isOpen, onClose }) => {
     }
 
     return (
-      <div className="trade-entry-form">
-          <h2>Trade Entry Form</h2>
+        <div className="modal-overlay">
+            <div className="trade-entry-form">
+                <h3>Trade Entry Form</h3>
 
-            <form onSubmit={handleSubmit}>
-                {/* Asset/Pair */}
-                <div className="asset">
-                    <label>Asset/Pair</label>
-                    <input 
-                        type="text"
-                        name="assetPair"
-                        value={formData.assetPair}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-
-                {/* Order type */}
-                <div className="order-type">
-                    <label>Order Type</label>
-                    <select
-                        name="orderType"
-                        value={formData.orderType}
-                        onChange={handleChange}
-                        required
-                    >
-                        <option value="">Select Order Type</option>
-                        <option value="Market">Market</option>
-                        <option value="Limit">Limit</option>
-                        <option value="Stop Limit">Stop Limit</option>
-                    </select>
-                </div>
-
-                {/* Trade type */}
-                <div className="trade-type">
-                    <label>Trade Type</label>
-                    <select
-                        name="tradeType"
-                        value={formData.tradeType}
-                        onChange={handleChange}
-                        required
-                    >
-                        <option value="">Select Trade Type</option>
-                        <option value="Long">Long</option>
-                        <option value="Short">Short</option>
-                    </select>
-                </div>
-
-                {/* Leverage */}
-                <div className="leverage">
-                    <label>Leverage</label>
-                        <input
-                            type="number"
-                            name="leverage"
-                            value={formData.leverage}
+                <form onSubmit={handleSubmit}>
+                    {/* Asset/Pair */}
+                    <div className="asset">
+                        <label>Asset/Pair</label>
+                        <input 
+                            type="text"
+                            name="assetPair"
+                            value={formData.assetPair}
                             onChange={handleChange}
-                            min="1"
                             required
                         />
-                </div>
+                    </div>
 
-                {/* Entry price */}
-                <div className="entry-price">
-                    <label>Entry Price</label>
-                    <input
-                        type="number"
-                        name="entryPrice"
-                        value={formData.entryPrice}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
+                    <div className="market-type">
+                        {/* Order type */}
+                        <div className="order-type">
+                            <label>Order Type</label>
+                            <select
+                                name="orderType"
+                                value={formData.orderType}
+                                onChange={handleChange}
+                                required
+                            >
+                                <option value="">Select Order Type</option>
+                                <option value="Market">Market</option>
+                                <option value="Limit">Limit</option>
+                                <option value="Stop Limit">Stop Limit</option>
+                            </select>
+                        </div>
+        
+                        {/* Trade type */}
+                        <div className="trade-type">
+                            <label>Trade Type</label>
+                            <select
+                                name="tradeType"
+                                value={formData.tradeType}
+                                onChange={handleChange}
+                                required
+                            >
+                                <option value="">Select Trade Type</option>
+                                <option value="Long">Long</option>
+                                <option value="Short">Short</option>
+                            </select>
+                        </div>
+                    </div>
 
-                {/* Stop-loss price */}
-                <div className="sl-price">
-                    <label>Stop-Loss Price</label>
-                    <input
-                        type="number"
-                        name="slPrice"
-                        value={formData.slPrice}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
+                    {/* Leverage */}
+                    <div className="leverage">
+                        <label>Leverage</label>
+                            <input
+                                type="number"
+                                name="leverage"
+                                value={formData.leverage}
+                                onChange={handleChange}
+                                min="1"
+                                required
+                            />
+                    </div>
 
-                {/* Take profit price */}
-                <div className="take-profit">
-                    <label>Take Profit Price</label>
-                    <input
-                        type="number"
-                        name="tpPrice"
-                        value={formData.tpPrice}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
+                    {/* Entry price */}
+                    <div className="entry-price">
+                        <label>Entry Price</label>
+                        <input
+                            type="number"
+                            name="entryPrice"
+                            value={formData.entryPrice}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
 
-                {/* Exit price */}
-                <div className="exit-price">
-                    <label>Exit Price</label>
-                    <input
-                        type="number"
-                        name="exitPrice"
-                        value={formData.exitPrice}
-                        onChange={handleChange}
-                    />
-                </div>
+                    {/* Stop-loss price */}
+                    <div className="sl-price">
+                        <label>Stop-Loss Price</label>
+                        <input
+                            type="number"
+                            name="slPrice"
+                            value={formData.slPrice}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
 
-                {/* Trade size */}
-                <div className="trade-size">
-                    <label>Trade Size</label>
-                    <input
-                        type="number"
-                        name="tradeSize"
-                        value={formData.tradeSize}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
+                    {/* Take profit price */}
+                    <div className="take-profit">
+                        <label>Take Profit Price</label>
+                        <input
+                            type="number"
+                            name="tpPrice"
+                            value={formData.tpPrice}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
 
-                {/* Datetime picker */}
-                <div className="date-time-picker">
-                    <label>Date & Time</label>
-                    <input
-                        type="datetime-local"
-                        name="dateTime"
-                        value={formData.dateTime}
-                        onChange={handleChange}
-                    />
-                </div>
+                    {/* Exit price */}
+                    <div className="exit-price">
+                        <label>Exit Price</label>
+                        <input
+                            type="number"
+                            name="exitPrice"
+                            value={formData.exitPrice}
+                            onChange={handleChange}
+                        />
+                    </div>
 
-                {/* Submit button -> test */}
-                <button>Submit</button>
-            </form>
-      </div>
+                    {/* Trade size */}
+                    <div className="trade-size">
+                        <label>Trade Size</label>
+                        <input
+                            type="number"
+                            name="tradeSize"
+                            value={formData.tradeSize}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+
+                    {/* Datetime picker */}
+                    <div className="date-time-picker">
+                        <label>Date & Time</label>
+                        <input
+                            type="datetime-local"
+                            name="dateTime"
+                            value={formData.dateTime}
+                            onChange={handleChange}
+                        />
+                    </div>
+
+                    <div className="tradeForm-btnContainer">
+                        {/* Cancel button -> test */}
+                        <button className="cancel-btn">Cancel</button>
+
+                        {/* Submit button -> test */}
+                        <button className="submit-btn">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     )
 }
 
