@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 const TradeEntryForm = ({ isOpen, onClose }) => {
     if (!isOpen) return null;
-    
+
     // form data
     const [formData, setFormData] = useState({
         assetPair: '',
@@ -67,7 +67,7 @@ const TradeEntryForm = ({ isOpen, onClose }) => {
                                 onChange={handleChange}
                                 required
                             >
-                                <option value="">Select Order Type</option>
+                                <option value="">Order Type</option>
                                 <option value="Market">Market</option>
                                 <option value="Limit">Limit</option>
                                 <option value="Stop Limit">Stop Limit</option>
@@ -83,7 +83,7 @@ const TradeEntryForm = ({ isOpen, onClose }) => {
                                 onChange={handleChange}
                                 required
                             >
-                                <option value="">Select Trade Type</option>
+                                <option value="">Trade Type</option>
                                 <option value="Long">Long</option>
                                 <option value="Short">Short</option>
                             </select>
@@ -175,7 +175,7 @@ const TradeEntryForm = ({ isOpen, onClose }) => {
 
                     <div className="tradeForm-btnContainer">
                         {/* Cancel button -> test */}
-                        <button className="cancel-btn">Cancel</button>
+                        <button className="cancel-btn" onClick={onClose}>Cancel</button>
 
                         {/* Submit button -> test */}
                         <button className="submit-btn">Submit</button>
