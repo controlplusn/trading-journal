@@ -1,4 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import axios from 'axios';
+
+const URL = "http://localhost:8000/api/trades/createTrade";
 
 const TradeEntryForm = ({ isOpen, onClose }) => {
     if (!isOpen) return null;
@@ -20,6 +23,7 @@ const TradeEntryForm = ({ isOpen, onClose }) => {
 
     // Error handling
     const [error, setError] = useState('');
+    const [success, setSuccess] = useState("");
 
     // Handle form input change
     const handleChange = (e) => {
@@ -31,12 +35,40 @@ const TradeEntryForm = ({ isOpen, onClose }) => {
     }
 
     // Handle form submissions
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Reset error if form is valid
-        setError('');
-        alert('Form submitted successfully');
+        try {
+            const response = await axios.post(URL, formData);
+            console.log("Trade added: ", response.data);
+            setSuccess("Trade added successfully");
+            setError("");
+
+            // Clear form after successful submission
+            setFormData({
+                assetPair: '',
+                orderType: '',
+                tradeType: '',
+                leverage: '',
+                entryPrice: '',
+                slPrice: '',
+                tpPrice: '',
+                exitPrice: '',
+                tradeSize: '',
+                dateTime: '',
+                tradeOutcome: '',
+            });
+
+            onClose();
+        } catch (error) {
+            console.log("Error adding trade: ", error.message);
+            setError("Failed to add trade. Please try again");
+            setSuccess("");
+        }
+    }
+
+    if (error) {
+        return <div>Error adding trades: {error.message}</div>
     }
 
     return (
