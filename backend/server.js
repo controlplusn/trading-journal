@@ -16,7 +16,7 @@ app.use(cookieParser());
 app.use(cors());
 
 app.use("/api/auth", authRoutes);
-app.use("/api/trade", tradeRoutes);
+app.use("/api/trades", tradeRoutes);
 
 app.listen(PORT, () => {
     connectDB();
