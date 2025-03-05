@@ -8,7 +8,7 @@ const TradeEntryForm = ({ isOpen, onClose }) => {
 
     // form data
     const [formData, setFormData] = useState({
-        assetPair: '',
+        asset: '',
         orderType: '',
         tradeType: '',
         leverage: '',
@@ -46,7 +46,7 @@ const TradeEntryForm = ({ isOpen, onClose }) => {
 
             // Clear form after successful submission
             setFormData({
-                assetPair: '',
+                asset: '',
                 orderType: '',
                 tradeType: '',
                 leverage: '',
@@ -82,8 +82,8 @@ const TradeEntryForm = ({ isOpen, onClose }) => {
                         <label>Asset/Pair</label>
                         <input 
                             type="text"
-                            name="assetPair"
-                            value={formData.assetPair}
+                            name="asset"
+                            value={formData.asset}
                             onChange={handleChange}
                             required
                         />
@@ -189,6 +189,18 @@ const TradeEntryForm = ({ isOpen, onClose }) => {
                             type="number"
                             name="tradeSize"
                             value={formData.tradeSize}
+                            onChange={handleChange}
+                            required
+                        />
+                    </div>
+
+                    {/* Trade Outcome */}
+                    <div className="trade-outcome">
+                        <label>Outcome</label>
+                        <input
+                            type="number"
+                            name="tradeOutcome"
+                            value={formData.tradeOutcome}
                             onChange={handleChange}
                             required
                         />
