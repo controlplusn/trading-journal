@@ -58,6 +58,7 @@
 .take-profit, 
 .exit-price, 
 .trade-size, 
+.trade-outcome,
 .date-time-picker {
     display: flex;
     align-items: center;
