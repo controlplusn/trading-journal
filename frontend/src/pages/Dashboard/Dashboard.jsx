@@ -1,6 +1,6 @@
 import React from 'react'
 import Sidebar from '../Sidebar/Sidebar';
-import Trade from '../Trade/Trade';
+import Trade from '../Trades Page/Trade';
 
 const Dashboard = () => {
   return (

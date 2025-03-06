@@ -6,7 +6,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import TradeEntryButton from './pages/Trade Entry Form/TradeEntryButton';
 import TradeFormParent from './pages/Trade Entry Form/TradeFormParent';
 import Dashboard from './pages/Dashboard/Dashboard';
-import Trade from './pages/Trade/Trade';
+import TradesPage from './pages/Trades Page/Trade';
 import NotFoundPage from './pages/Error Page/NotFoundPage';
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <Trade />,
+      element: <TradesPage />,
       errorElement: <NotFoundPage />
     },
     {

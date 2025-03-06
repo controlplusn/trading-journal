@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import TradeFormParent from '../Trade Entry Form/TradeFormParent';
+import '../../styles/Trades Page/tradesPage.css';
 
 const URL = "http://localhost:8000/api/trades/fetchTrades";
 
@@ -38,7 +39,7 @@ const Trade = () => {
             <h2>Trade History</h2>
             <TradeFormParent />
 
-            <table border="1">
+            <table>
                 <thead>
                     <tr>
                         <th>Asset</th>
