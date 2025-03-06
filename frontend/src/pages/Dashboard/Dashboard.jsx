@@ -4,10 +4,9 @@ import Trade from '../Trades Page/Trade';
 
 const Dashboard = () => {
   return (
-    <div>
-      {/* <Sidebar /> */}
+    <div className="dashboard">
+      <Sidebar />
       <h1>Dashboard</h1>
-      <Trade />
     </div>
   )
 }
