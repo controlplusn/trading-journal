@@ -9,20 +9,20 @@ const Trade = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [trades, setTrades] = useState([]);
 
-    useEffect(() => {
-        const fetchTrades = async () => {
-            setIsLoading(true);
-            try {
-                const response = await fetch(URL);
-                const trades = (await response.json());
-                setTrades(trades);
-            } catch (error) {
-                setError(error);
-            } finally {
-                setIsLoading(false);
-            }
+    const fetchTrades = async () => {
+        setIsLoading(true);
+        try {
+            const response = await fetch(URL);
+            const trades = (await response.json());
+            setTrades(trades);
+        } catch (error) {
+            setError(error);
+        } finally {
+            setIsLoading(false);
         }
+    };
 
+    useEffect(() => {
         fetchTrades();
     }, []);
 
@@ -37,7 +37,7 @@ const Trade = () => {
     return (
         <div className="trades-page">
             <h2>Trade History</h2>
-            <TradeFormParent />
+            <TradeFormParent onTradeAdded={fetchTrades} />
 
             <table className="tradesPage-table">
                 <thead>

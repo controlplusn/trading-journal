@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const URL = "http://localhost:8000/api/trades/createTrade";
 
-const TradeEntryForm = ({ isOpen, onClose }) => {
+const TradeEntryForm = ({ isOpen, onClose, onTradeAdded }) => {
     if (!isOpen) return null;
 
     // form data
@@ -58,6 +58,10 @@ const TradeEntryForm = ({ isOpen, onClose }) => {
                 dateTime: '',
                 tradeOutcome: '',
             });
+
+            if (onTradeAdded) {
+                onTradeAdded();
+            }
 
             onClose();
         } catch (error) {
