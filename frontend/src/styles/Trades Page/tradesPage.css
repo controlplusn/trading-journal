@@ -1,0 +1,62 @@
+:root {
+    --btn-color: #212121;
+    --btn-text-color: #ffffff;
+    --border-bottom-color: #ddd;
+    --table-hover: #f5f5f5;
+}
+
+.trades-page {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.trades-page h2 {
+    margin-bottom: 10px;
+}
+
+.trade-form-parent .trade-entry-btn {
+    margin-bottom: 20px;
+    background-color: var(--btn-color);
+    color: var(--btn-text-color);
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.tradesPage-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.tradesPage-table th {
+    background-color: var(--btn-color);
+    color: var(--btn-text-color);
+    padding: 10px;
+    text-transform: uppercase;
+}
+
+.tradesPage-table td {
+    padding: 12px;
+    border-bottom: 1px solid var(--border-bottom-color);
+}
+
+.tradesPage-table tbody tr:hover {
+    background-color: var(--table-hover);
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    .tradesPage-table {
+        font-size: 14px;
+    }
+
+    .tradesPage-table th, .tradesPage-table td {
+        padding: 8px;
+    }
+}

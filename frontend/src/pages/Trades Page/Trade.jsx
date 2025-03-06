@@ -39,7 +39,7 @@ const Trade = () => {
             <h2>Trade History</h2>
             <TradeFormParent />
 
-            <table>
+            <table className="tradesPage-table">
                 <thead>
                     <tr>
                         <th>Asset</th>
