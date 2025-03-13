@@ -5,6 +5,7 @@ import Signup from './pages/Signup/Signup';
 import Dashboard from './pages/Dashboard/Dashboard';
 import TradesPage from './pages/Trades Page/Trade';
 import NotFoundPage from './pages/Error Page/NotFoundPage';
+import CalendarPage from './pages/Calendar/CalendarPage';
 
 function App() {
 
@@ -21,7 +22,7 @@ function App() {
     },
     {
       path: '/',
-      element: <Dashboard />,
+      element: <CalendarPage />,
       errorElement: <NotFoundPage />
     },
     {
