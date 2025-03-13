@@ -202,7 +202,7 @@ const TradeEntryForm = ({ isOpen, onClose, onTradeAdded }) => {
                     <div className="trade-outcome">
                         <label>Outcome</label>
                         <input
-                            type="number"
+                            type="text"
                             name="tradeOutcome"
                             value={formData.tradeOutcome}
                             onChange={handleChange}
