@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
-import { SidebarData } from './SidebarData';
+import SidebarLists from '../../components/ui/SidebarLists';
 import { FaBars } from "react-icons/fa";
+import { RiDashboardFill } from "react-icons/ri";
+import { FaCalendarAlt } from "react-icons/fa";
+import { RxActivityLog } from "react-icons/rx";
+import { TbPresentationAnalytics } from "react-icons/tb";
+
 import '../../styles/Sidebar/sidebar.css';
 
 const Sidebar = () => {
@@ -13,21 +17,38 @@ const Sidebar = () => {
   
   return (
     <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
-      <div className="sidebar-header">
-        <h2>Trading Journal</h2>
-        <FaBars onClick={toggleSidebar}/>
-      </div>
+        <div className="sidebar-header">
+            <h2>Trading Journal</h2>
+            <FaBars onClick={toggleSidebar}/>
+        </div>
 
+      {/* List of sidebar elements */}
       <ul className='sidebar-list'>
-        {SidebarData.map((item, index) => (
-          <li key={index} className='sidebar-item'>
-            <Link to={item.link} className='sidebar-link'>
-              {item.title}
-            </Link>
-          </li>
-        ))}
+                <SidebarLists  
+                    link={"/"} 
+                    icon={<RiDashboardFill />}
+                    title="Dashboard"
+                />  
 
-      </ul>
+                <SidebarLists 
+                    link={"/calendar"}
+                    icon={<FaCalendarAlt />}
+                    title="Calendar"
+                />
+
+                <SidebarLists 
+                    link={"/tradecollection"}
+                    icon={<RxActivityLog />}
+                    title="Trades"
+                />
+
+                <SidebarLists 
+                    link={"/analytics"}
+                    icon={<TbPresentationAnalytics />}
+                    title="Analytics"
+                />
+
+        </ul>
     </div>
   )
 }
