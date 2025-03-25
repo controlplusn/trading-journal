@@ -6,7 +6,7 @@ const sidebarLists = ({ link, icon, title }) => {
     <li className='sidebarItem'>
         <Link to={link} className="sidebar-link">
             {icon}
-            <p>{title}</p>
+            {title && <span>{title}</span>}
         </Link>
     </li>
   )

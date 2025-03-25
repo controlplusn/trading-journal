@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import TradesPage from './pages/Trades Page/Trade';
 import NotFoundPage from './pages/Error Page/NotFoundPage';
 import CalendarPage from './pages/Calendar/CalendarPage';
+import Sidebar from './pages/Sidebar/Sidebar';
 
 function App() {
 
@@ -22,7 +23,7 @@ function App() {
     },
     {
       path: '/',
-      element: <CalendarPage />,
+      element: <Sidebar />,
       errorElement: <NotFoundPage />
     },
     {

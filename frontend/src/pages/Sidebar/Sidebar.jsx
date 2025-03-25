@@ -18,35 +18,32 @@ const Sidebar = () => {
   return (
     <div className={`sidebar ${isOpen ? 'open' : 'closed'}`}>
         <div className="sidebar-header">
-            <h2>Trading Journal</h2>
-            <FaBars onClick={toggleSidebar}/>
+            {isOpen && <h2>Trading Journal</h2>}
+            <FaBars onClick={toggleSidebar} clasName="sidebar-menu"/>
         </div>
 
-      {/* List of sidebar elements */}
-      <ul className='sidebar-list'>
-                <SidebarLists  
-                    link={"/"} 
-                    icon={<RiDashboardFill />}
-                    title="Dashboard"
-                />  
-
-                <SidebarLists 
-                    link={"/calendar"}
-                    icon={<FaCalendarAlt />}
-                    title="Calendar"
-                />
-
-                <SidebarLists 
-                    link={"/tradecollection"}
-                    icon={<RxActivityLog />}
-                    title="Trades"
-                />
-
-                <SidebarLists 
-                    link={"/analytics"}
-                    icon={<TbPresentationAnalytics />}
-                    title="Analytics"
-                />
+        {/* List of sidebar elements */}
+        <ul className='sidebar-list'>
+            <SidebarLists  
+                link={"/"} 
+                icon={<RiDashboardFill />}
+                title={isOpen ? "Dashboard" : ""}
+            />  
+            <SidebarLists 
+                link={"/calendar"}
+                icon={<FaCalendarAlt />}
+                title={isOpen ? "Calendar" : ""}
+            />
+            <SidebarLists 
+                link={"/tradecollection"}
+                icon={<RxActivityLog />}
+                title={isOpen ? "Trades" : ""}
+            />
+            <SidebarLists 
+                link={"/analytics"}
+                icon={<TbPresentationAnalytics />}
+                title={isOpen ? "Analytics" : ""}
+            />
 
         </ul>
     </div>
