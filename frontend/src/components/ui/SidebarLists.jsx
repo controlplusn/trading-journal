@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import React from 'react'
 
-const sidebarLists = ({ link, icon, title }) => {
+const SidebarLists = ({ link, icon, title }) => {
   return (
     <li className='sidebarItem'>
         <Link to={link} className="sidebar-link">
@@ -12,4 +12,4 @@ const sidebarLists = ({ link, icon, title }) => {
   )
 }
 
-export default sidebarLists
+export default SidebarLists;
